@@ -3,7 +3,11 @@
 
 - User Guide
 
-  - It will show logger in console and save file in BaseLog.log 
+  - It will show logger in console and save file in BaseLog.log or user specified path.
+  - It can work in multi-process.
+  - All config settings will be changed permanent.
+  - Config file is centralized management, and visible in **para_config.json** and **path_config.json**.
+  - Log configuration can be restored by deleting the  **para_config_local.json** and **path_config_local.json**.
 
   
 
