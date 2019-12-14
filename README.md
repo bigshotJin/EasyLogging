@@ -1,5 +1,5 @@
 # EasyLogging
-- no painful to use it  :)
+- No painful to use  :)
 
 - User Guide
 
@@ -11,7 +11,7 @@ Simple example
 ```python
 from easy_logging.easylogging import EasyLogging
 
-EasyLogging().get_class_logger()
+mylogger = EasyLogging().get_class_logger()
 
 mylogger.debug('debug')
 mylogger.info('info')
