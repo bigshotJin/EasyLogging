@@ -24,10 +24,10 @@ mylogger.critical('critical')
 - Output to console with striking error
 
 ```python
-from easy_logging.easylogging import EasyLogging
+from easy_logging.easylogging import BaseEasyLogging
 
 # get logger
-mylogger = EasyLogging().get_class_logger('logger_console_red')
+mylogger = BaseEasyLogging().get_logger('logger_console_red')
 
 mylogger.debug('debug') # only sys.stdout
 mylogger.info('info') # only sys.stdout
