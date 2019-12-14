@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# easy_logging
+AbnormalLogConfigInfo.txt
+para_config_local.json
+path_config_local.json
+*.log
+.idea

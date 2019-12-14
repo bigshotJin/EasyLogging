@@ -1,0 +1,130 @@
+{
+	"version": 1,
+	"disable_existing_loggers": true,
+	"incremental": false,
+	"formatters": {
+        "simple_msg":{
+            "class":"logging.Formatter",
+            "format" : "[TIME:%(asctime)s][LEVEL:%(levelname)s][%(message)s]"
+        },
+		"normal_msg": {
+			"class": "logging.Formatter",
+			"format": "[%(asctime)s][%(levelname)s][%(process)d|%(thread)d][%(name)s|%(funcName)s][%(message)s]",
+			"datefmt": "%Y-%m-%d %H:%M:%S"
+		},
+		"particular_msg": {
+			"class": "logging.Formatter",
+			"format": "[TIME:%(asctime)s][LEVEL:%(levelname)s][TID:%(thread)d][PID:%(process)d][NAME:%(name)s][FUNCTION:%(funcName)s][MESSAGE:%(message)s]",
+			"datefmt": "%Y-%m-%d %H:%M:%S"
+		},
+		"verbose_msg": {
+			"class": "logging.Formatter",
+			"format": "[TIME:%(asctime)s][LEVEL:%(levelname)s][TID:%(thread)d][PID:%(process)d][NAME:%(name)s][FUNCTION:%(funcName)s][MESSAGE:%(message)s]"
+		}
+	},
+	"handlers": {
+		"console": {
+			"level": "DEBUG",
+			"class": "logging.StreamHandler",
+			"formatter": "normal_msg",
+			"stream": "ext://sys.stdout"
+		},
+		"console_red": {
+			"level": "WARNING",
+			"class": "logging.StreamHandler",
+			"formatter": "normal_msg"
+		},
+		"file": {
+			"level": "DEBUG",
+			"class": "concurrent_log_handler.ConcurrentRotatingFileHandler",
+			"formatter": "particular_msg",
+			"maxBytes": 10485760,
+			"backupCount": 32,
+			"delay": true,
+			"filename": "BaseLog.log",
+			"encoding": "utf8"
+		},
+		"file_simple": {
+			"level": "DEBUG",
+			"class": "concurrent_log_handler.ConcurrentRotatingFileHandler",
+			"formatter": "simple_msg",
+			"maxBytes": 10485760,
+			"backupCount": 64,
+			"delay": true,
+			"filename": "SimpleLog.log",
+			"encoding": "utf8"
+		},
+		"file_normal": {
+			"level": "DEBUG",
+			"class": "concurrent_log_handler.ConcurrentRotatingFileHandler",
+			"formatter": "normal_msg",
+			"maxBytes": 10485760,
+			"backupCount": 64,
+			"delay": true,
+			"filename": "NormalLog.log",
+			"encoding": "utf8"
+		},
+		"file_particular": {
+			"level": "DEBUG",
+			"class": "concurrent_log_handler.ConcurrentRotatingFileHandler",
+			"formatter": "particular_msg",
+			"maxBytes": 10485760,
+			"backupCount": 64,
+			"delay": true,
+			"filename": "ParticularLog.log",
+			"encoding": "utf8"
+		},
+		"file_verbose": {
+			"level": "DEBUG",
+			"class": "concurrent_log_handler.ConcurrentRotatingFileHandler",
+			"formatter": "verbose_msg",
+			"maxBytes": 10485760,
+			"backupCount": 128,
+			"delay": true,
+			"filename": "VerboseLog.log",
+			"encoding": "utf8"
+		}
+	},
+	"loggers": {
+		"root": {
+		    "handlers": ["console","file"],
+		    "level": "DEBUG",
+		    "propagate": false
+		},
+		"logger_console": {
+			"handlers": ["console"],
+			"level": "DEBUG",
+			"propagate": false
+		},
+		"logger_console_red": {
+			"handlers": ["console","console_red"],
+			"level": "DEBUG",
+			"propagate": false
+		},
+		"logger_file": {
+			"handlers": ["file"],
+			"level": "DEBUG",
+			"propagate": false
+		},
+		"logger_simple_msg": {
+			"handlers": ["console","file_simple"],
+			"level": "DEBUG",
+			"propagate": false
+		},
+		"logger_normal_msg": {
+			"handlers": ["console","file_normal"],
+			"level": "DEBUG",
+			"propagate": false
+		},
+		"logger_particular_msg": {
+			"handlers": ["console","file_particular"],
+			"level": "DEBUG",
+			"propagate": false
+		},
+		"logger_verbose_msg": {
+			"handlers": ["console","file_verbose"],
+			"level": "DEBUG",
+			"propagate": false
+		}
+	}
+}
