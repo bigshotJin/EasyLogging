@@ -1,6 +1,7 @@
 # EasyLogging
 - No painful to use  :)
-- Please install this package as follows in command. 
+- If your os is windows7/10, just click ***Quick Install.bat*** to install this module.
+- You can alse install this package as follows in command window.
 
 ```
 python setup.py install
