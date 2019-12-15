@@ -1,0 +1,2 @@
+include easy_logging/para_config.json
+include easy_logging/path_config.json
