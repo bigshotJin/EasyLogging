@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages 
 
 setup(
-    name = "east-logging",
+    name = "easy-logging",
     version = "0.0.1",
     keywords =("logging","easy","multi-process"),
     description = "Easy Logging, No painfal to use. :)",
