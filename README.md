@@ -1,5 +1,10 @@
 # EasyLogging
 - No painful to use  :)
+- Please install this package as follows in command. 
+
+```
+python setup.py install
+```
 
 - User Guide
 
