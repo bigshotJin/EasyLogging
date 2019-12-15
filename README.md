@@ -1,7 +1,8 @@
 # EasyLogging
-- No painful to use  :)
-- If your os is windows7/10, just click ***Quick Install.bat*** to install this module.
-- You can alse install this package as follows in command window.
+
+- No pain to use  :)
+- If your OS is windows7/10, just click ***Quick Install.bat*** to install this module.
+- You can also install this package as follows in command window.
 
 ```
 python setup.py install
@@ -9,7 +10,7 @@ python setup.py install
 
 - User Guide
 
-  - It will show logger in console and save file in BaseLog.log or user specified path.
+  - It will show logger in console and save file in BaseLog.log or user's specified path.
   - It can work in multi-process.
   - All config settings will be changed permanent.
   - Config file is centralized management, and visible in **para_config.json** and **path_config.json**.
@@ -31,6 +32,7 @@ mylogger.warning('warning')
 mylogger.error('error')
 mylogger.critical('critical')
 ```
+
 - Output to console with striking error
 
 ```python
@@ -81,7 +83,3 @@ from easy_logging.easylogging import EasyNormalLogging # normal msg
 from easy_logging.easylogging import EasyParticularLogging # detail msg
 from easy_logging.easylogging import EasyVerboseLogging # verbose msg
 ```
-
-
-
-
