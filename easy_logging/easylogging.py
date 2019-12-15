@@ -89,8 +89,8 @@ class BaseEasyLogging(ABClassEasyLogging):
                         self.path_dict = json.load(path_config)
                         self.path_config_load_success = True
                     except json.decoder.JSONDecodeError as error_info:
-                        self.abnormal_info_output(f'path_config_json_path with error encoding,'
-                                                  f'please check json format.'
+                        self.abnormal_info_output(f'path_config_json_path with error encoding, '
+                                                  f'please check json format. '
                                                   f'error_info={error_info}')
         return None
 
@@ -113,13 +113,13 @@ class BaseEasyLogging(ABClassEasyLogging):
                             # overwrite and set the new output paht
                             self.para_dict['handlers'][file_handler_key]['filename'] = log_file_path
                         else:
-                            abnormal_info = (f'Want to chang the output path of [handlers={file_handler_key}],'
+                            abnormal_info = (f'Want to chang the output path of [handlers={file_handler_key}], '
                                              f'but this handler was not defined in para_config'
                                              f'please check [filename] key-value, and check the inner logical of json!')
                             self.abnormal_info_output(abnormal_info)
                     else:
-                        abnormal_info = (f'Want to chang the output path of [handlers={file_handler_key}],'
-                                         f'but this handler was not clearly defined,'
+                        abnormal_info = (f'Want to chang the output path of [handlers={file_handler_key}], '
+                                         f'but this handler was not clearly defined, '
                                          f'please check the inner logical of json!')
                         self.abnormal_info_output(abnormal_info)
                 self.mix_para_path_success = True
@@ -172,8 +172,8 @@ class BaseEasyLogging(ABClassEasyLogging):
         else:
             root_logger_config_info = self.config_dict['loggers']['root']
             self.config_dict['loggers'][logger_name] = root_logger_config_info
-            self.abnormal_info_output(f'given logger_name:{logger_name},'
-                                      f'was not exist in current logger list,'
+            self.abnormal_info_output(f'given logger_name:{logger_name}, '
+                                      f'was not exist in current logger list, '
                                       f'and it was auto added.')
 
     def _export_to_local_json(self):
@@ -242,7 +242,7 @@ class BaseEasyLogging(ABClassEasyLogging):
                             pass
                         else:
                             os.makedirs(folder_path)
-                            abnormal_info = (f'The output folder was not exist,'
+                            abnormal_info = (f'The output folder was not exist, '
                                              f'so it was created automatically:{folder_path}')
                             self.abnormal_info_output(abnormal_info)
         return None
@@ -310,10 +310,10 @@ class BaseEasyLogging(ABClassEasyLogging):
         self._check_para_json_exist()
         self._check_path_json_exist()
         if self.para_config_exist is None:
-            raise RuntimeError('self.para_config_exist should not be None,'
+            raise RuntimeError('self.para_config_exist should not be None, '
                                'please execute self._check_para_json_exist()')
         if self.path_config_exist is None:
-            raise RuntimeError('self.path_config_exist should not be None,'
+            raise RuntimeError('self.path_config_exist should not be None, '
                                'please execute self._check_path_json_exist()')
         return None
 
@@ -455,7 +455,7 @@ class BaseEasyLogging(ABClassEasyLogging):
             additional_info = additional_info + f'config_dict type error, it should be dict;'
 
         if operate_successful_flag:
-            self.abnormal_info_output(f'add handlers in {logger} success,'
+            self.abnormal_info_output(f'add handlers in {logger} success, '
                                       f'handlers_list:{handlers_list}')
         else:
             self.abnormal_info_output(f'_set_logger_handlers(logger={logger} operate failed,'
@@ -512,10 +512,10 @@ class BaseEasyLogging(ABClassEasyLogging):
             additional_info = additional_info + f'config_dict type error, it should be dict;'
 
         if operate_successful_flag:
-            self.abnormal_info_output(f'_set_handle_detail(handler={handler},'
+            self.abnormal_info_output(f'_set_handle_detail(handler={handler}, '
                                       f'key={key},value={value}) operate success')
         else:
-            self.abnormal_info_output(f'_set_handle_detail(handler={handler},'
+            self.abnormal_info_output(f'_set_handle_detail(handler={handler}, '
                                       f'key={key},value={value}) operate failed,'
                                       f'error reason:{additional_info}')
 
