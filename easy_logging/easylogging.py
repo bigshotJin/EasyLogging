@@ -490,7 +490,7 @@ class BaseEasyLogging(ABClassEasyLogging):
 
         if operate_successful_flag:
             self.abnormal_info_output(f'set {logger} level success,'
-                                      f'not level is: {level}')
+                                      f'now level is: {level}')
         else:
             self.abnormal_info_output(f'_set_logger_level(logger={logger},'
                                       f'level={level}) operate failed,'
